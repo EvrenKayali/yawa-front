@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+body,app-root,app-core{
+    height: 100%!important;
+}
+app-footer{
+    margin-top: auto!important;
+}
+app-core{
+flex-direction: column!important;
+display: flex!important;
+}
