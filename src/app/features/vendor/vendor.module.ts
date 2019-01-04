@@ -5,9 +5,10 @@ import { RouterModule } from '@angular/router';
 import { VendorFormComponent } from './components/vendor-form/vendor-form.component';
 import { VendorListComponent } from './components/vendor-list/vendor-list.component';
 import { VendorCardComponent } from './components/vendor-card/vendor-card.component';
+import { VendorIndexComponent } from './components/vendor-index/vendor-index.component';
 
 @NgModule({
-  declarations: [VendorComponent, VendorFormComponent, VendorListComponent, VendorCardComponent],
+  declarations: [VendorComponent, VendorFormComponent, VendorListComponent, VendorCardComponent, VendorIndexComponent],
   imports: [
     CommonModule,
     RouterModule

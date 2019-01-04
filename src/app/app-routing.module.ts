@@ -5,6 +5,7 @@ import { VendorComponent } from './features/vendor/components/vendor/vendor.comp
 import { CoreComponent } from './core/core.component';
 import { VendorFormComponent } from './features/vendor/components/vendor-form/vendor-form.component';
 import { VendorListComponent } from './features/vendor/components/vendor-list/vendor-list.component';
+import { VendorIndexComponent } from './features/vendor/components/vendor-index/vendor-index.component';
 
 const routes: Routes = [
   {
@@ -22,11 +23,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: VendorListComponent,
+            component: VendorIndexComponent,
           },
           {
             path: 'list',
-            component: VendorListComponent,
+            component: VendorIndexComponent,
           },
           {
             path: 'new',
