@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { getLocaleEraNames } from '@angular/common';
+import { Vendor } from '../../models/vendor';
 
 @Component({
   selector: 'app-vendor-list',
@@ -8,7 +9,7 @@ import { getLocaleEraNames } from '@angular/common';
 })
 export class VendorListComponent implements OnInit {
 
-  @Input() vendors: any[];
+  @Input() vendors: Vendor[];
 
   constructor() { }
 
