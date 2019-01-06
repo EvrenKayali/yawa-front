@@ -21,7 +21,8 @@ export class VendorFormComponent implements OnInit {
 
     this.vendorFormGroup = fb.group({
       title: '',
-      description: ''
+      description: '',
+      color: ''
     });
   }
 

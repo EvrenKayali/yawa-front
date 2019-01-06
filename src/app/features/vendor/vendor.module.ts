@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { VendorComponent } from './components/vendor/vendor.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ColorPickerModule } from 'ngx-color-picker';
 import { VendorFormComponent } from './components/vendor-form/vendor-form.component';
 import { VendorListComponent } from './components/vendor-list/vendor-list.component';
 import { VendorCardComponent } from './components/vendor-card/vendor-card.component';
@@ -14,6 +15,7 @@ import { VendorIndexComponent } from './components/vendor-index/vendor-index.com
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
+    ColorPickerModule
   ]
 })
 export class VendorModule { }
