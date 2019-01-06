@@ -9,3 +9,7 @@ app-core{
 flex-direction: column!important;
 display: flex!important;
 }
+
+input.ng-invalid.ng-touched{
+    border-color: red;
+}
