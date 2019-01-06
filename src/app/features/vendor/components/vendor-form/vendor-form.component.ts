@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vendor } from '../../models/vendor.model';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { validateConfig } from '@angular/router/src/config';
 
 @Component({
   selector: 'app-vendor-form',
@@ -14,8 +15,8 @@ export class VendorFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.vendorFormGroup = fb.group({
-      title: '',
-      description: ''
+      title: ['', Validators.required],
+      description: ['', Validators.compose([Validators.minLength(5), Validators.required])]
     });
   }
 

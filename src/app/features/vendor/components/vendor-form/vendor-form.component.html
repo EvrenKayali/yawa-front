@@ -14,6 +14,10 @@
         formControlName="title">
       <small id="emailHelp"
         class="form-text text-muted">Enter vendor name here</small>
+      <div class="alert alert-danger"
+        *ngIf="!vendorFormGroup.controls['title'].valid && vendorFormGroup.controls['title'].touched">
+        <div *ngIf="vendorFormGroup.controls['title'].errors.required">Name field is required</div>
+      </div>
     </div>
     <div class="form-group">
       <label for="companyDescription">Description</label>
@@ -21,8 +25,15 @@
         id="companyDescription"
         rows="3"
         formControlName="description"></textarea>
+      <div class="alert alert-danger"
+        *ngIf="!vendorFormGroup.controls['description'].valid && vendorFormGroup.controls['description'].touched">
+        <div *ngIf="vendorFormGroup.controls['description'].errors.required"> Description field is required</div>
+        <div *ngIf="vendorFormGroup.controls['description'].errors.minlength">
+          Description field value must be at least 5 characters</div>
+      </div>
     </div>
     <button type="submit"
-      class="btn btn-success">Submit</button>
+      class="btn btn-success"
+      [disabled]="!vendorFormGroup.valid">Submit</button>
   </form>
 </div>
