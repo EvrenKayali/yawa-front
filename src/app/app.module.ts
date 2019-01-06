@@ -8,6 +8,10 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { CoreComponent } from './core/core.component';
 import { HomeModule } from './features/home/home.module';
 import { VendorModule } from './features/vendor/vendor.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { VendorModule } from './features/vendor/vendor.module';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    VendorModule
+    VendorModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

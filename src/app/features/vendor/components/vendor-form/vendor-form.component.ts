@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Vendor } from '../../models/vendor.model';
+import * as fromStore from '../../../../store/reducers';
+import { Store } from '@ngrx/store';
+import * as vendorActions from '../../../../store/actions/vendor.actions';
 
 @Component({
   selector: 'app-vendor-form',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorFormComponent implements OnInit {
 
-  constructor() { }
+  vendorFormGroup: FormGroup;
+  vendor: Vendor;
+
+  constructor(
+    private fb: FormBuilder,
+    private store: Store<fromStore.State>) {
+
+    this.vendorFormGroup = fb.group({
+      title: '',
+      description: ''
+    });
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.vendor = Object.assign({}, this.vendorFormGroup.value);
+    this.store.dispatch(new vendorActions.AddVendor(this.vendor));
   }
 
 }

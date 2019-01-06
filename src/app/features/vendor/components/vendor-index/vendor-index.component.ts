@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Vendor } from '../../models/vendor.model';
 import { VendorService } from '../../services/vendor.service';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../../../store/reducers';
 
 @Component({
   selector: 'app-vendor-index',
@@ -11,10 +13,11 @@ import { Observable } from 'rxjs';
 export class VendorIndexComponent implements OnInit {
 
   vendors$: Observable<Vendor[]>;
-  constructor(private vendorService: VendorService) { }
+  constructor(private store: Store<fromStore.State>) { }
 
   ngOnInit() {
-    this.vendors$ = this.vendorService.getVendors();
+    this.vendors$ = this.store.select(state => state.vendor.vendors);
+    //this.vendors$ = this.vendorService.getVendors();
     // .subscribe(vendors => this.vendors = vendors);
   }
 
