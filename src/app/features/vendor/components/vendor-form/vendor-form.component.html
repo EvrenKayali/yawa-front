@@ -4,7 +4,7 @@
     <small><a routerLink="/vendor">Back</a></small>
   </div>
   <form [formGroup]="vendorFormGroup"
-    (ngSubmit)="onSubmit()">
+    (ngSubmit)="submit()">
     <div class="form-group">
       <label for="companyName">Company Name</label>
       <input type="text"

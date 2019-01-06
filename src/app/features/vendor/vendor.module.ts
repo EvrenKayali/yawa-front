@@ -7,9 +7,10 @@ import { VendorFormComponent } from './components/vendor-form/vendor-form.compon
 import { VendorListComponent } from './components/vendor-list/vendor-list.component';
 import { VendorCardComponent } from './components/vendor-card/vendor-card.component';
 import { VendorIndexComponent } from './components/vendor-index/vendor-index.component';
+import { VendorSaveComponent } from './components/vendor-save/vendor-save.component';
 
 @NgModule({
-  declarations: [VendorComponent, VendorFormComponent, VendorListComponent, VendorCardComponent, VendorIndexComponent],
+  declarations: [VendorComponent, VendorFormComponent, VendorListComponent, VendorCardComponent, VendorIndexComponent, VendorSaveComponent],
   imports: [
     CommonModule,
     RouterModule,

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Vendor } from '../../models/vendor.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { validateConfig } from '@angular/router/src/config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vendor-form',
@@ -10,10 +10,12 @@ import { validateConfig } from '@angular/router/src/config';
 })
 export class VendorFormComponent implements OnInit {
 
+  @Output() submitted = new EventEmitter<Vendor>();
   vendorFormGroup: FormGroup;
   vendor: Vendor;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private router: Router) {
     this.vendorFormGroup = fb.group({
       title: ['', Validators.required],
       description: ['', Validators.compose([Validators.minLength(5), Validators.required])]
@@ -23,9 +25,8 @@ export class VendorFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.vendor = Object.assign({}, this.vendorFormGroup.value);
-    console.log(this.vendor);
+  submit() {
+    this.submitted.emit(Object.assign({}, this.vendorFormGroup.value))
   }
 
 }
