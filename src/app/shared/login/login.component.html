@@ -1,0 +1,127 @@
+<main role="main"
+  class="container">
+  <div class="card mt-3">
+    <div class="card-header">
+      Login
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm"
+        (ngSubmit)="submit()">
+
+        <div class="row">
+          <div class="col-8">
+            <select class="form-control"
+              formControlName="userControl"
+              (ngModelChange)="onUserChange($event)">
+              <option *ngFor="let user of users"
+                [ngValue]="user">{{user.name}}</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <button type="submit"
+              [disabled]="!loginForm.valid"
+              class="btn btn-primary mb-2">Confirm identity
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="container emp-profile"
+    *ngIf="selectedUser">
+    <form method="post">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img [src]="selectedUser.img"
+              alt="" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+              {{selectedUser.name}}
+            </h5>
+            <h6>
+              {{selectedUser.title}}
+            </h6>
+            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+
+            <ngb-tabset type="tabs">
+              <ngb-tab title="About">
+                <ng-template ngbTabContent>
+                  <div class="profile-tab">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>User Id</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>{{selectedUser.subject}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>Name</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>{{selectedUser.name}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>Email</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>{{selectedUser.email}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>Phone</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>123 456 7890</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>Profession</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>{{selectedUser.title}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Company">
+                <ng-template ngbTabContent>
+                  <div class="profile-tab">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>Company</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>{{selectedUser.company.name}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                        <label>Type</label>
+                      </div>
+                      <div class="col-md-4">
+                        <p>{{selectedUser.company.type}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

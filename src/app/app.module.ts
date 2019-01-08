@@ -8,6 +8,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { CoreComponent } from './core/core.component';
 import { HomeModule } from './features/home/home.module';
 import { VendorModule } from './features/vendor/vendor.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './shared/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import { VendorModule } from './features/vendor/vendor.module';
     NavbarComponent,
     FooterComponent,
     CoreComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    VendorModule
+    VendorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
