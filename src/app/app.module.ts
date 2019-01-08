@@ -9,8 +9,9 @@ import { CoreComponent } from './core/core.component';
 import { HomeModule } from './features/home/home.module';
 import { VendorModule } from './features/vendor/vendor.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from './shared/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from './features/auth/auth.module';
+import { UserProfileModule } from './features/user-profile/user-profile.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     CoreComponent,
-    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VendorModule,
     FormsModule,
     ReactiveFormsModule,
+    AuthModule,
+    UserProfileModule.forRoot(),
     NgbModule.forRoot(),
   ],
   providers: [],

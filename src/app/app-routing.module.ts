@@ -3,12 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './features/home/components/home/home.component';
 import { VendorComponent } from './features/vendor/components/vendor/vendor.component';
 import { CoreComponent } from './core/core.component';
-import { VendorFormComponent } from './features/vendor/components/vendor-form/vendor-form.component';
-import { VendorListComponent } from './features/vendor/components/vendor-list/vendor-list.component';
 import { VendorIndexComponent } from './features/vendor/components/vendor-index/vendor-index.component';
 import { VendorSaveComponent } from './features/vendor/components/vendor-save/vendor-save.component';
-import { LoginComponent } from './shared/login/login.component';
 import { AuthorizationGuard } from './services/authorization.guard';
+import { LoginComponent } from './features/auth/components/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

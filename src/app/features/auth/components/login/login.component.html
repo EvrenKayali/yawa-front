@@ -1,0 +1,32 @@
+<main role="main"
+  class="container">
+  <div class="card mt-3">
+    <div class="card-header">
+      Login
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm"
+        (ngSubmit)="submit()">
+
+        <div class="row">
+          <div class="col-8">
+            <select class="form-control"
+              formControlName="userControl"
+              (ngModelChange)="onUserChange($event)">
+              <option *ngFor="let user of users"
+                [ngValue]="user">{{user.name}}</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <button type="submit"
+              [disabled]="!loginForm.valid"
+              class="btn btn-primary mb-2">Confirm identity
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <app-user-profile [user]="selectedUser"></app-user-profile>
+</main>
