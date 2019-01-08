@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './features/auth/auth.module';
 import { UserProfileModule } from './features/user-profile/user-profile.module';
+import { UserProfileIndexComponent } from './feature/user-profile/components/user-profile-index/user-profile-index.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserProfileModule } from './features/user-profile/user-profile.module';
     NavbarComponent,
     FooterComponent,
     CoreComponent,
+    UserProfileIndexComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { VendorIndexComponent } from './features/vendor/components/vendor-index/
 import { VendorSaveComponent } from './features/vendor/components/vendor-save/vendor-save.component';
 import { AuthorizationGuard } from './services/authorization.guard';
 import { LoginComponent } from './features/auth/components/login/login.component';
+import { UserProfileIndexComponent } from './features/user-profile/components/user-profile-index/user-profile-index.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,6 +20,10 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         children: []
+      },
+      {
+        path: 'profile',
+        component: UserProfileIndexComponent,
       },
       {
         path: 'vendor',
@@ -44,8 +49,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-
-  }
+  },
 ];
 
 @NgModule({
